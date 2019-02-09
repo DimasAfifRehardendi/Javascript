@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Class List</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<!-- load jquery adn bootstrap js -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
+	<script type="text/javascript">
+		function ChangeBackground(color){
+			// mengambil elemen html
+			var element = document.getElementById('pesan');
+			// mengosongkan class pada element yang diambil
+			element.className="";
+			// memberikan class "alert" pada element yang di ambil
+			element.classList.add("alert");
+			// memberikan class tipe alert berdasarkan parameter
+			element.classList.add("alert-"+color);
+		}
+	</script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="card col-sm-12">
+				<div class="card-header bg-success text-white">
+					<h4>Alert Setting</h4>
+				</div>
+				<div class="card-body">
+					<div class="alert alert-light" id="pesan">
+						<strong>Urgent!</strong>
+						This is a alert message, you can change type of alert below.
+					</div>
+				</div>
+				<div class="card-footer">
+					<!-- Background Setting -->
+					<select class="form-control" onchange="ChangeBackground(this.value);">
+						<option value="light">Default</option>
+						<option value="primary">Primary</option>
+						<option value="danger">Danger</option>
+						<option value="warnign">Warning</option>
+						<option value="success">Success</option>
+						<option value="dark">Dark</option>
+						<option value="Secondary">Secondary</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
